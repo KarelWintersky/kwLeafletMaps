@@ -12,7 +12,16 @@
 <div class="wrapper">
 
     <div class="content">
-        Nothing here.
+        <h2>Карты:</h2>
+
+        <ul>
+            {%*projects_list*}
+            <li>
+                <a href="/leafletmaps/{*projects_list:project_alias*}/">{*projects_list:project_title*}</a>
+            </li>
+            {*projects_list*%}
+        </ul>
+
     </div>
 
     <div class="footer">

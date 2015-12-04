@@ -8,21 +8,11 @@ $project_alias
 
 // read data
 
-$searchmask = 'storage/' . $project_alias . '/*.json';
+$filename = 'storage/' . $project_alias . '.json';
 
-$maps_list = array();
+$maps_list = json_decode( file_get_contents( $filename ), true );
 
-foreach (glob($searchmask) as $filename) {
-    $map_data = json_decode( file_get_contents( $filename ), true );
-
-    $map_alias = $map_data['info']['alias'];
-
-    $maps_list[ $map_alias ] = array(
-        'map_alias'     =>  $map_data['info']['alias'],
-        'map_title'     =>  $map_data['info']['title']
-    );
-
-}
+var_dump($maps_list);
 
 // form arrays
 
@@ -35,8 +25,8 @@ $template_data = array(
 // build template
 
 $template_file = 'maps_list.html';
-$html = websun_parse_template_path($template_data, $template_file, LFME_TEMPLATES_PATH );
+// $html = websun_parse_template_path($template_data, $template_file, LFME_TEMPLATES_PATH );
 
 // print
 
-echo $html;
+//echo $html;

@@ -4,4 +4,4 @@
 
 require_once 'websun/websun.php';
 
-require_once 'lfme/lfme.core.php'; // LeaFletMapsEngine
+// require_once 'lfme/lfme.core.php'; // LeaFletMapsEngine - не используется, удалено из проекта
