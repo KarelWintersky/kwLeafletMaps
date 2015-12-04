@@ -1,0 +1,24 @@
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+
+# php_value error_reporting "E_ALL & ~E_NOTICE"
+
+ErrorDocument 404 /leafletmaps/README.md
+
+RewriteEngine on
+RewriteBase /leafletmaps
+
+# RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# /project (add map, add project etc) (Добавить [\/]? перед $ чтобы /project/ был равен /project)
+
+RewriteRule ^([A-Za-z0-9-]+)$ project.php?project=$1 [L,QSA]
+
+# project/map
+
+RewriteRule ^([A-Za-z0-9-]+)/([^/]+)$ map.php?project=$1&map=$2 [L,QSA]
+
