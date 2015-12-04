@@ -10,15 +10,16 @@ $project_alias
 
 $filename = 'storage/' . $project_alias . '.json';
 
-$maps_list = json_decode( file_get_contents( $filename ), true );
+$data = json_decode( file_get_contents( $filename ), true );
 
-var_dump($maps_list);
+echo '<pre>';
+var_dump($data);
 
 // form arrays
 
 $template_data = array(
     'project_alias'         =>  $project_alias,
-    'maps_list'             =>  $maps_list,
+    'maps_list'             =>  $data,
     'project_title'         =>  "Список карт по проекту {$project_alias}"
 );
 

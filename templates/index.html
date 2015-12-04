@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet maps</title>
+    <title>{*index_title*}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="templates/css/common.css" />
@@ -12,12 +12,12 @@
 <div class="wrapper">
 
     <div class="content">
-        <h2>Карты:</h2>
+        <h2>Все проекты:</h2>
 
         <ul>
             {%*projects_list*}
             <li>
-                <a href="/leafletmaps/{*projects_list:project_alias*}/">{*projects_list:project_title*}</a>
+                <a href="/leafletmaps/{*projects_list:project_alias*}">{*projects_list:project_title*}</a>
             </li>
             {*projects_list*%}
         </ul>

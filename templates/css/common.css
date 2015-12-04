@@ -15,3 +15,11 @@ body {
     height: 100%;
 }
 
+h2 {
+    padding: 1em;
+}
+
+ul {
+    margin-left: 1em;
+    padding: 1em;
+}
