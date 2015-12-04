@@ -1,11 +1,13 @@
 {
     "info": {
-        "description": "Simple map"
+        "alias": "worldmap",
+        "title": "Ghost line world map",
+        "description": "Sample description"
     },
     "image": {
-        "url": "image.jpg",
-        "width": 1000,
-        "height": 1000
+        "url": "3rd_age_map.jpg",
+        "width": 2500,
+        "height": 3200
     },
     "zoom": {
         "zoom_min": 1,

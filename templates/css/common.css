@@ -4,7 +4,7 @@
 }
 html,
 body {
-    height: 100%;
+    height: 99.9%;
 }
 .wrapper {
     display: table;
@@ -14,3 +14,4 @@ body {
     display: table-row;
     height: 100%;
 }
+
