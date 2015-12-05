@@ -11,8 +11,8 @@ foreach (glob($searchmask) as $filename) {
     $data = json_decode( file_get_contents( $filename ), true );
 
     $project = array(
-        'project_alias'     =>  $data['project']['project_alias'],
-        'project_title'     =>  $data['project']['project_title']
+        'project_alias'     =>  $data['project']['alias'],
+        'project_title'     =>  $data['project']['title']
     );
 
     $projects_list[] = $project;

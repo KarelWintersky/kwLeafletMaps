@@ -1,7 +1,9 @@
 {
     "project" : {
-        "project_alias": "ghostlines",
-        "project_title": "Карты сеттинга Ghost Lines"
+        "alias": "ghostlines",
+        "title": "Карты сеттинга Ghost Lines",
+        "description": "Сеттинг Ghost Lines",
+        "desc_file": ""
     },
     "maps" : [
         {
@@ -19,27 +21,8 @@
                 "zoom_min": 1,
                 "zoom_max": 5,
                 "zoom_cur": 3,
-                "center_x": 100,
-                "center_y": 200
-            }
-        },
-        {
-            "info": {
-                "alias": "worldmap2",
-                "title": "world map #2",
-                "description": "Sample description"
-            },
-            "image": {
-                "url": "3rd_age_map___.jpg",
-                "width": 2500,
-                "height": 3200
-            },
-            "zoom": {
-                "zoom_min": 1,
-                "zoom_max": 5,
-                "zoom_cur": 3,
-                "center_x": 100,
-                "center_y": 200
+                "center_x": -100,
+                "center_y": 120
             }
         }
 

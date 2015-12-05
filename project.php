@@ -10,24 +10,36 @@ $project_alias
 
 $filename = 'storage/' . $project_alias . '.json';
 
-$data = json_decode( file_get_contents( $filename ), true );
+$file_data = file_get_contents( $filename );
 
-echo '<pre>';
-var_dump($data);
+if ($file_data === FALSE)
+    redirect( LFME_ROOT_PATH );
+
+$data = json_decode($file_data , true );
+
+$maps = $data['maps'];
+
+foreach($data['maps'] as $map) {
+    $maps_list[] = array(
+        'map_alias'     =>  $map['info']['alias'],
+        'map_title'     =>  $map['info']['title']
+    );
+}
 
 // form arrays
 
 $template_data = array(
     'project_alias'         =>  $project_alias,
-    'maps_list'             =>  $data,
-    'project_title'         =>  "Список карт по проекту {$project_alias}"
+    'project_title'         =>  "Карты: " . $data['project']['title'],
+    'project_description'   =>  $data['project']['description'],
+    'maps_list'             =>  $maps_list
 );
 
 // build template
 
 $template_file = 'maps_list.html';
-// $html = websun_parse_template_path($template_data, $template_file, LFME_TEMPLATES_PATH );
+$html = websun_parse_template_path($template_data, $template_file, LFME_TEMPLATES_PATH );
 
 // print
 
-//echo $html;
+echo $html;

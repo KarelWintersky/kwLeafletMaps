@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{*map_title*}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="/leafletmaps/templates/css/map_view.css" />
+
+    <!-- core js -->
+    <script type="text/javascript" src="/leafletmaps/templates/js/html5shiv.js"></script>
+    <script type="text/javascript" src="/leafletmaps/templates/js/jquery.min.js"></script>
+    <!-- leaflet -->
+    <script type="text/javascript" src="/leafletmaps/templates/js/leaflet.js"></script>
+    <script type="text/javascript" src="/leafletmaps/templates/js/leaflet/L.Control.MousePosition.js"></script>
+
+    <link rel="stylesheet" href="/leafletmaps/templates/css/leaflet.css" />
+    <link rel="stylesheet" href="/leafletmaps/templates/js/leaflet/L.Control.MousePosition.css">
+
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // $.ajaxSetup({cache: false});
+
+            /* init leaflet */
+            var leaflet_config = {
+                width:      {*map_width*},
+                height:     {*map_height*},
+                url:        '{*map_link*}',
+                ief:        1,
+                min_zoom:   {*zoom_min*},
+                max_zoom:   {*zoom_max*},
+                curr_zoom:  {*zoom_cur*}
+            };
+
+            var map = L.map('leafletmap', {
+                minZoom:    leaflet_config.min_zoom,
+                maxZoom:    leaflet_config.max_zoom,
+                zoom:       leaflet_config.curr_zoom,
+                center:     [{*center_x*}, {*center_y*}],
+                crs:        L.CRS.Simple
+            });
+
+            // calculate the edges of the image, in coordinate space
+            var southWest = map.unproject([0, leaflet_config.height], leaflet_config.max_zoom-1);
+            var northEast = map.unproject([leaflet_config.width, 0],  leaflet_config.max_zoom-1);
+            var bounds = new L.LatLngBounds(southWest, northEast);
+
+            // add the image overlay, so that it covers the entire map
+            L.imageOverlay(leaflet_config.url, bounds).addTo(map);
+
+            // tell leaflet that the map is exactly as big as the image
+            map.setMaxBounds(bounds);
+
+            L.control.mousePosition({
+                numDigits   : 2,
+                lngFirst    :   true,
+                latFormatter: function(data){
+                    return -Math.floor(data);
+                },
+                lngFormatter: function(data){
+                    return Math.floor(data);
+                }
+            }).addTo(map);
+        });
+    </script>
+</head>
+<body>
+<h2>{*map_title*}</h2>
+<div id="leafletmap"></div>
+
+<a href="{*back_url*}">BACK to project </a>
+<br>
+<small><em>&copy;Karel Wintersky, Dec 2015</em></small>
+</body>
+</html>
