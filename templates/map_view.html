@@ -26,6 +26,9 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // $.ajaxSetup({cache: false});
+            $("#back").on('click', function(){
+                document.location.href = '{*back_url*}';
+            });
 
             /* init leaflet */
             var leaflet_config = {
@@ -71,10 +74,9 @@
     </script>
 </head>
 <body>
-<h2>{*map_title*}</h2>
+<button id="back">BACK to project</button><h2>{*map_title*}</h2>
 <div id="leafletmap"></div>
 
-<a href="{*back_url*}">BACK to project </a>
 <br>
 <small><em>&copy;Karel Wintersky, Dec 2015</em></small>
 </body>

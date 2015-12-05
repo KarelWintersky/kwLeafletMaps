@@ -3,7 +3,8 @@
         "alias": "ghostlines",
         "title": "Карты сеттинга Ghost Lines",
         "description": "Сеттинг Ghost Lines",
-        "desc_file": ""
+        "desc_file": "",
+        "maps_folder": ""
     },
     "maps" : [
         {

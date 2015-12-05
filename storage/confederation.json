@@ -19,7 +19,7 @@
                 "height": 2666
             },
             "zoom": {
-                "zoom_min": 1,
+                "zoom_min": 2,
                 "zoom_max": 5,
                 "zoom_cur": 2,
                 "center_x": -350,

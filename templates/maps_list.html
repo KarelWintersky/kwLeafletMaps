@@ -5,6 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="/leafletmaps/templates/css/common.css" />
+    <script type="text/javascript">
+        function goBack()
+        {
+            document.location.href = '{*back_url*}';
+        }
+    </script>
 
 </head>
 <body>
@@ -13,7 +19,6 @@
 
     <div class="content">
         <h2>Карты:</h2>
-
         <ul>
             {%*maps_list*}
             <li>
@@ -29,8 +34,8 @@
         </fieldset>
 
 -->
+        <button onclick="goBack()">BACK</button>
 
-        <a href="{*back_url*}">BACK to project index</a>
     </div>
 
     <div class="footer">
