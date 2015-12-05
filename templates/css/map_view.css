@@ -1,0 +1,51 @@
+.colorboxed-header {
+    background-color: #5ab500;
+    min-width: 40%;
+    width: 40%;
+}
+
+button {
+    font-size: large;
+}
+
+/* Leaflet */
+#leafletmap {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+/* popup window styles */
+.region-content {
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.region-content legend {
+    font-weight: bold;
+    font-size: large;
+    padding-left: 5px;
+    padding-right: 1em;
+}
+
+/* canvas container */
+.themap {
+    position:absolute;
+    z-index:1;
+    opacity: 0.8;
+}
+
+#map-container{
+    display:inline-block;
+    width:1048px;
+    height:827px;
+    margin: 0 auto;
+    position:relative;
+}
+#mapcanvas{
+    position:relative;
+    z-index:20;
+}
