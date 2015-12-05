@@ -32,7 +32,8 @@ $template_data = array(
     'project_alias'         =>  $project_alias,
     'project_title'         =>  "Карты: " . $data['project']['title'],
     'project_description'   =>  $data['project']['description'],
-    'maps_list'             =>  $maps_list
+    'maps_list'             =>  $maps_list,
+    'back_url'              =>  LFME_ROOT_PATH . '/'
 );
 
 // build template

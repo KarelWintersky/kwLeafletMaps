@@ -1,0 +1,109 @@
+{
+    "project" : {
+        "alias": "confederation",
+        "title": "Карты Федерации",
+        "description": "Федерация",
+        "desc_file": "",
+        "maps_folder": "confederation"
+    },
+    "maps" : [
+        {
+            "info": {
+                "alias": "confmap",
+                "title": "Основная карта Федерации (с радиусами)",
+                "description": ""
+            },
+            "image": {
+                "url": "nm_confmap_radius.png",
+                "width": 3440,
+                "height": 2666
+            },
+            "zoom": {
+                "zoom_min": 1,
+                "zoom_max": 5,
+                "zoom_cur": 2,
+                "center_x": -350,
+                "center_y": 100
+            }
+        },
+        {
+            "info": {
+                "alias": "fomalhauth",
+                "title": "Сектор Фомальгаута",
+                "description": ""
+            },
+            "image": {
+                "url": "s_nm_fomalgaut.gif",
+                "width": 1880,
+                "height": 1507
+            },
+            "zoom": {
+                "zoom_min": 1,
+                "zoom_max": 5,
+                "zoom_cur": 3,
+                "center_x": -100,
+                "center_y": 120
+            }
+        },
+        {
+            "info": {
+                "alias": "nightwish",
+                "title": "Сектор Найтвиш",
+                "description": ""
+            },
+            "image": {
+                "url": "s_nm_nightwish.gif",
+                "width": 1524,
+                "height": 1440
+            },
+            "zoom": {
+                "zoom_min": 1,
+                "zoom_max": 5,
+                "zoom_cur": 3,
+                "center_x": -100,
+                "center_y": 120
+            }
+        },
+        {
+            "info": {
+                "alias": "ringtail",
+                "title": "Сектор Рингтейл",
+                "description": ""
+            },
+            "image": {
+                "url": "s_nm_ringtail.gif",
+                "width": 1716,
+                "height": 1333
+            },
+            "zoom": {
+                "zoom_min": 1,
+                "zoom_max": 5,
+                "zoom_cur": 3,
+                "center_x": -100,
+                "center_y": 120
+            }
+        },
+        {
+            "info": {
+                "alias": "vega",
+                "title": "Сектор Веги",
+                "description": ""
+            },
+            "image": {
+                "url": "s_nm_vega.gif",
+                "width": 1856,
+                "height": 1102
+            },
+            "zoom": {
+                "zoom_min": 1,
+                "zoom_max": 5,
+                "zoom_cur": 3,
+                "center_x": -100,
+                "center_y": 120
+            }
+        }
+
+    ]
+}
+
+

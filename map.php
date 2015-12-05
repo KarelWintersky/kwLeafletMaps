@@ -21,6 +21,9 @@ if ($file_data === FALSE)
 
 $data = json_decode($file_data , true );
 
+if ($data['project']['maps_folder'] == '')
+    $data['project']['maps_folder'] = $project_alias;
+
 // load mapinfo from .json file with given map_alias
 
 $map_found = FALSE;
@@ -31,7 +34,7 @@ foreach($data['maps'] as $anymap) {
 
         if (!preg_match('/^(http|https):\/\//' , $map['image']['url'])) {
             $map['image']['link'] = LFME_ROOT_PATH . '/storage/' .
-                $project_alias . '/' . $map['image']['url'];
+                $data['project']['maps_folder'] . '/' . $map['image']['url'];
         } else {
             $map['image']['link'] = $map['image']['url'];
         }
