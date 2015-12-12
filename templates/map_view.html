@@ -12,10 +12,8 @@
     <script type="text/javascript" src="/leafletmaps/templates/js/jquery.min.js"></script>
     <!-- leaflet -->
     <script type="text/javascript" src="/leafletmaps/templates/js/leaflet.js"></script>
-    <script type="text/javascript" src="/leafletmaps/templates/js/leaflet/L.Control.MousePosition.js"></script>
 
     <link rel="stylesheet" href="/leafletmaps/templates/css/leaflet.css" />
-    <link rel="stylesheet" href="/leafletmaps/templates/js/leaflet/L.Control.MousePosition.css">
 
     <style type="text/css">
         a {
@@ -25,7 +23,6 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            // $.ajaxSetup({cache: false});
             $("#back").on('click', function(){
                 document.location.href = '{*back_url*}';
             });
@@ -59,17 +56,6 @@
 
             // tell leaflet that the map is exactly as big as the image
             map.setMaxBounds(bounds);
-
-            L.control.mousePosition({
-                numDigits   : 2,
-                lngFirst    :   true,
-                latFormatter: function(data){
-                    return -Math.floor(data);
-                },
-                lngFormatter: function(data){
-                    return Math.floor(data);
-                }
-            }).addTo(map);
         });
     </script>
 </head>
