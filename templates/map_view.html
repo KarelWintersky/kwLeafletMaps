@@ -4,9 +4,6 @@
     <title>{*map_title*}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="/leafletmaps/templates/css/map_view.css" />
-
     <!-- core js -->
     <script type="text/javascript" src="/leafletmaps/templates/js/html5shiv.js"></script>
     <script type="text/javascript" src="/leafletmaps/templates/js/jquery.min.js"></script>
@@ -16,8 +13,19 @@
     <link rel="stylesheet" href="/leafletmaps/templates/css/leaflet.css" />
 
     <style type="text/css">
+        button {
+            font-size: large;
+        }
+
         a {
             text-decoration: none;
+        }
+        /* Leaflet */
+        #leafletmap {
+            width: {*leafletmaparea_width*}px;
+            height: {*leafletmaparea_height*}px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
         }
     </style>
 

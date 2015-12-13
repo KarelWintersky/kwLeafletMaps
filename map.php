@@ -2,6 +2,7 @@
 
 require_once 'backend/required.php';
 
+/* project and map aliases */
 $project_alias
     = isset($_GET['project'])
     ? $_GET['project']
@@ -12,6 +13,16 @@ $map_alias
     ? $_GET['map']
     : die('No such map!');
 
+/** @todo: what about loading this data from config? see .json->viewport
+ what about global project viewport configuration and specific-for-map values?
+ see 'viewport' block
+ */
+
+/* display settings (for IFRAME embedding)*/
+$display_width = at($_GET, 'width', 800);
+$display_height = at($_GET, 'height', 600);
+
+/* load config */
 $filename = 'storage/' . $project_alias . '.json';
 
 $file_data = file_get_contents( $filename );
@@ -59,7 +70,10 @@ $template_data = array(
     'center_x'          =>  $map['zoom']['center_x'],
     'center_y'          =>  $map['zoom']['center_y'],
     // back url
-    'back_url'          =>  LFME_ROOT_PATH . '/' . $project_alias
+    'back_url'          =>  LFME_ROOT_PATH . '/' . $project_alias,
+    // viewarea size
+    'leafletmaparea_width'  => $display_width,
+    'leafletmaparea_height' => $display_height
 );
 
 // build template

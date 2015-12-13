@@ -5,6 +5,10 @@
         "description": "Описание проекта",
         "desc_file": "файл с html-кодом описания проекта"
     },
+    "viewport": {
+            "width":    800,
+            "height":   600
+        },
     "maps" : [
         {
             "info": {
