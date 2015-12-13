@@ -1,5 +1,4 @@
 <?php
-
 require_once 'backend/required.php';
 
 /* project and map aliases */
@@ -13,16 +12,7 @@ $map_alias
     ? $_GET['map']
     : die('No such map!');
 
-/** @todo: what about loading this data from config? see .json->viewport
- what about global project viewport configuration and specific-for-map values?
- see 'viewport' block
- */
-
-/* display settings (for IFRAME embedding)*/
-$display_width = at($_GET, 'width', 800);
-$display_height = at($_GET, 'height', 600);
-
-/* load config */
+/* load config file */
 $filename = 'storage/' . $project_alias . '.json';
 
 $file_data = file_get_contents( $filename );
@@ -32,14 +22,40 @@ if ($file_data === FALSE)
 
 $data = json_decode($file_data , true );
 
+// настройки viewport по умолчанию:
+
+$display_width = LFME_VIEWPORT_WIDTH;
+$display_height = LFME_VIEWPORT_HEIGHT;
+
+// прочитать настройки viewport из файла конфигурации для проекта
+
+/*
+ * @todo: проапгрейдить at(), чтобы можно было обращаться к ключу многомерного
+ * массива... скажем, по ключу: at($config, 'project/viewport', 800);
+ */
+
+if (isset($data['viewport'])) {
+    $display_width  = at($data['viewport'], 'width', $display_width);
+    $display_height = at($data['viewport'], 'height', $display_height);
+}
+
+/*
+ * Если $config->project->maps_folder пуст, то
+ * считается, что все карты лежат в каталоге с именем алиаса проекта.
+ */
 if ($data['project']['maps_folder'] == '')
     $data['project']['maps_folder'] = $project_alias;
 
-// load mapinfo from .json file with given map_alias
+// проверка наличия структуры config->maps (если она пуста - редирект в корень)
+if (!isset($data['maps']) || (count($data['maps']) == 0) )
+    redirect( LFME_ROOT_PATH );
 
+// load mapinfo from .json file with given map_alias
+// ищем описание карты
 $map_found = FALSE;
 foreach($data['maps'] as $anymap) {
     if ($anymap['info']['alias'] == $map_alias) {
+        // карта найдена
         $map_found = TRUE;
         $map = $anymap;
 
@@ -49,13 +65,24 @@ foreach($data['maps'] as $anymap) {
         } else {
             $map['image']['link'] = $map['image']['url'];
         }
+
+        // прочитать настройки viewport для конкретной карты (перекрыв глобальные)
+        if (isset($map['viewport'])) {
+            $display_width  = at($map['viewport'], 'width', $display_width);
+            $display_height = at($map['viewport'], 'height', $display_height);
+        }
     }
 }
 
-// form arrays
+// проанализировать GET-параметры, перекрыв уже определенные выше.
+$display_width  = at($_GET, 'width', $display_width);
+$display_height = at($_GET, 'height', $display_height);
+
+// form template override values
 
 $template_data = array(
     'project_alias'     =>  $project_alias,
+    'project_title'     =>  $data['project']['title'],
     'map_alias'         =>  $map_alias,
     'map_title'         =>  $map['info']['title'],
     // map image

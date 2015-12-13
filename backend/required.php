@@ -4,9 +4,16 @@
 @define( "LFME_TEMPLATES_PATH" , '$/leafletmaps/templates' );
 @define( "LFME_INDEX_TITLE" , "Каталог карт для ролевых игр на движке Leaflet");
 
+// размеры области отображения leaflet-карты по умолчанию
+@define( "LFME_VIEWPORT_WIDTH", 800);
+@define( "LFME_VIEWPORT_HEIGHT", 600);
+
 require_once 'websun/websun.php';
 
-// require_once 'lfme/lfme.core.php'; // LeaFletMapsEngine - не используется, удалено из проекта
+/* =====================================================================
+* Функции, используемые в проекте. В этом файле описаны только для того,
+* чтобы не плодить кучу ненужных мелких файлов.
+** ===================================================================== */
 
 /**
  * Instant redirect по указанному URL
