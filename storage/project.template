@@ -1,6 +1,6 @@
 {
     "project" : {
-        "alias": "ghostlines",
+        "alias": "someproject",
         "title": "Заголовок проекта",
         "description": "Описание проекта",
         "desc_file": "файл с html-кодом описания проекта"
@@ -12,12 +12,12 @@
     "maps" : [
         {
             "info": {
-                "alias": "алиас карты",
+                "alias": "somemap",
                 "title": "Заголовок карты",
                 "description": "Описание карты"
             },
             "image": {
-                "url": "3rd_age_map.jpg",
+                "url": "image.jpg",
                 "width": 2500,
                 "height": 3200
             },

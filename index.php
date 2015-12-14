@@ -22,7 +22,8 @@ foreach (glob($searchmask) as $filename) {
 
 $template_data = array(
     'projects_list'       =>  $projects_list,
-    'index_title'         =>  LFME_INDEX_TITLE
+    'index_title'         =>  LFME_INDEX_TITLE,
+    'lfme_version'        =>  LFME_VERSION
 );
 
 // build template

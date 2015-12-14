@@ -100,7 +100,9 @@ $template_data = array(
     'back_url'          =>  LFME_ROOT_PATH . '/' . $project_alias,
     // viewarea size
     'leafletmaparea_width'  => $display_width,
-    'leafletmaparea_height' => $display_height
+    'leafletmaparea_height' => $display_height,
+    // copyrights
+    'lfme_version'          =>  LFME_VERSION
 );
 
 // build template

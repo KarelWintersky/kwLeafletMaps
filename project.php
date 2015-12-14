@@ -33,7 +33,8 @@ $template_data = array(
     'project_title'         =>  "Карты: " . $data['project']['title'],
     'project_description'   =>  $data['project']['description'],
     'maps_list'             =>  $maps_list,
-    'back_url'              =>  LFME_ROOT_PATH . '/'
+    'back_url'              =>  LFME_ROOT_PATH . '/',
+    'lfme_version'          =>  LFME_VERSION
 );
 
 // build template

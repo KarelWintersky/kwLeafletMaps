@@ -1,0 +1,11 @@
+<?php
+@define( "LFME_VERSION", "0.2.9 RC");
+
+// пути к шаблонам и корню
+@define( "LFME_ROOT_PATH", '/leafletmaps' );
+@define( "LFME_TEMPLATES_PATH" , '$/leafletmaps/templates' );
+@define( "LFME_INDEX_TITLE" , "Каталог карт для ролевых игр на движке Leaflet");
+
+// размеры области отображения leaflet-карты по умолчанию
+@define( "LFME_VIEWPORT_WIDTH", 800);
+@define( "LFME_VIEWPORT_HEIGHT", 600);

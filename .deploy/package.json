@@ -1,0 +1,22 @@
+{
+  "name": "KWLeafletMaps",
+  "version": "0.2.2",
+  "author": "Karel Wintersky <karel.wintersky@gmail.com>",
+  "description": "Karel Wintersky's LeafletMaps Engine for TTRPG",
+  "keywords": [
+    "НРИ",
+    "ролевая система",
+    "картография"
+  ],
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/KarelWintersky/kwLeafletMaps.git"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-ftp-deploy": "^0.1.10",
+    "time-grunt": "^1.2.0"
+  }
+}

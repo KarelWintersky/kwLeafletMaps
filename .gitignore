@@ -1,0 +1,16 @@
+# Junk that could exist anywhere:
+*.swp
+*.tmp
+*.log
+
+# Ignore this folders:
+
+.idea
+.git
+node_modules
+
+# Ignore this files:
+
+.deploy/account.json
+.deploy/node_modules
+backend/config.php
