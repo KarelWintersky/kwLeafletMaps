@@ -78,9 +78,25 @@ foreach($data['maps'] as $anymap) {
 $display_width  = at($_GET, 'width', $display_width);
 $display_height = at($_GET, 'height', $display_height);
 
+// теперь 800 надо привести к 800px, а 80% так и оставить
+
+if (
+    (strpos($display_height, '%') === FALSE) &&
+    (strpos($display_height, 'px') === FALSE)) {
+    $display_height .= 'px';
+}
+
+if (
+    (strpos($display_width, '%') === FALSE) &&
+    (strpos($display_width, 'px') === FALSE)) {
+    $display_width .= 'px';
+}
+
+
 // form template override values
 
 $template_data = array(
+    // paths
     'project_alias'     =>  $project_alias,
     'project_title'     =>  $data['project']['title'],
     'map_alias'         =>  $map_alias,
@@ -102,7 +118,9 @@ $template_data = array(
     'leafletmaparea_width'  => $display_width,
     'leafletmaparea_height' => $display_height,
     // copyrights
-    'lfme_version'          =>  LFME_VERSION
+    'lfme_version'          =>  LFME_VERSION,
+    // template base path
+    'lfme_root'         =>  LFME_ROOT_PATH
 );
 
 // build template

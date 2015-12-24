@@ -4,7 +4,7 @@
     <title>{*project_title*}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- styles -->
-    <link rel="stylesheet" type="text/css" href="/leafletmaps/templates/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="{*lfme_root*}/templates/css/common.css" />
     <style type="text/css">
         #copyright {
             font-size: small;
@@ -28,7 +28,7 @@
         <ul>
             {%*maps_list*}
             <li>
-                <a href="/leafletmaps/{*project_alias*}/{*maps_list:map_alias*}">{*maps_list:map_title*}</a>
+                <a href="{*lfme_root*}/{*project_alias*}/{*maps_list:map_alias*}">{*maps_list:map_title*}</a>
             </li>
             {*maps_list*%}
         </ul>

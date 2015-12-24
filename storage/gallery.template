@@ -1,24 +1,25 @@
 {
     "project" : {
-        "alias": "someproject",
-        "title": "Заголовок проекта",
-        "description": "Описание проекта",
-        "desc_file": "файл с html-кодом описания проекта"
+        "alias"         : "someproject",
+        "title"         : "Заголовок проекта",
+        "description"   : "Описание проекта",
+        "desc_file"     : "файл с html-кодом описания проекта",
+        "maps_folder"   : ""
     },
     "viewport": {
-            "width":    800,
+            "width" :   800,
             "height":   600
         },
     "maps" : [
         {
             "info": {
-                "alias": "somemap",
-                "title": "Заголовок карты",
+                "alias"     : "somemap",
+                "title"     : "Заголовок карты",
                 "description": "Описание карты"
             },
             "image": {
-                "url": "image.jpg",
-                "width": 2500,
+                "url"   : "image.jpg",
+                "width" : 2500,
                 "height": 3200
             },
             "zoom": {

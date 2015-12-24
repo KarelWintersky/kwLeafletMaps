@@ -5,12 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!-- core js -->
-    <script type="text/javascript" src="/leafletmaps/templates/js/html5shiv.js"></script>
-    <script type="text/javascript" src="/leafletmaps/templates/js/jquery.min.js"></script>
-    <!-- leaflet -->
-    <script type="text/javascript" src="/leafletmaps/templates/js/leaflet.js"></script>
+    <script type="text/javascript" src="{*lfme_root*}/templates/js/html5shiv.js"></script>
+    <script type="text/javascript" src="{*lfme_root*}/templates/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/leafletmaps/templates/css/leaflet.css" />
+    <!-- leaflet -->
+    <script type="text/javascript" src="{*lfme_root*}/templates/js/leaflet.js"></script>
+
+    <link rel="stylesheet" href="{*lfme_root*}/templates/css/leaflet.css" />
 
     <style type="text/css">
         button {
@@ -26,8 +27,8 @@
         }
         /* Leaflet */
         #leafletmap {
-            width: {*leafletmaparea_width*}px;
-            height: {*leafletmaparea_height*}px;
+            width: {*leafletmaparea_width*};
+            height: {*leafletmaparea_height*};
             border: 1px solid #ccc;
             margin-bottom: 10px;
         }
@@ -77,7 +78,7 @@
     </script>
 </head>
 <body>
-<button id="back">Назад к проекту '{*project_title*}'</button>
+<button id="back">Назад к коллекции '{*project_title*}'</button>
 <h2 id="map_title">{*map_title*}</h2>
 <div id="leafletmap"></div>
 

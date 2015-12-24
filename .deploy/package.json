@@ -1,6 +1,6 @@
 {
   "name": "KWLeafletMaps",
-  "version": "0.2.2",
+  "version": "0.3",
   "author": "Karel Wintersky <karel.wintersky@gmail.com>",
   "description": "Karel Wintersky's LeafletMaps Engine for TTRPG",
   "keywords": [
@@ -8,6 +8,7 @@
     "ролевая система",
     "картография"
   ],
+  "homepage": "http://rpg.wintersky.ru/leafletmaps/",
   "repository": [
     {
       "type": "git",

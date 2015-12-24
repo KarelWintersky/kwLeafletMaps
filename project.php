@@ -29,12 +29,18 @@ foreach($data['maps'] as $map) {
 // form arrays
 
 $template_data = array(
+    // project
     'project_alias'         =>  $project_alias,
     'project_title'         =>  "Карты: " . $data['project']['title'],
     'project_description'   =>  $data['project']['description'],
+    //
     'maps_list'             =>  $maps_list,
+    //
     'back_url'              =>  LFME_ROOT_PATH . '/',
-    'lfme_version'          =>  LFME_VERSION
+    // copyrights
+    'lfme_version'          =>  LFME_VERSION,
+    // template base path
+    'lfme_root'             =>  LFME_ROOT_PATH
 );
 
 // build template

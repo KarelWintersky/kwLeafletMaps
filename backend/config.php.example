@@ -1,5 +1,5 @@
 <?php
-@define( "LFME_VERSION", "0.2.9 RC");
+@define( "LFME_VERSION", "0.3 Release");
 
 // пути к шаблонам и корню
 @define( "LFME_ROOT_PATH", '/leafletmaps' );
