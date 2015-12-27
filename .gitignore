@@ -2,6 +2,7 @@
 *.swp
 *.tmp
 *.log
+*.zip
 
 # Ignore this folders:
 

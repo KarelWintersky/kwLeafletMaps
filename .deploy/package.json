@@ -1,8 +1,9 @@
 {
   "name": "KWLeafletMaps",
-  "version": "0.3",
+  "version": "0.3.1",
   "author": "Karel Wintersky <karel.wintersky@gmail.com>",
   "description": "Karel Wintersky's LeafletMaps Engine for TTRPG",
+  "private": true,
   "keywords": [
     "НРИ",
     "ролевая система",
@@ -17,6 +18,7 @@
   ],
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-contrib-compress": "^0.14.0",
     "grunt-ftp-deploy": "^0.1.10",
     "time-grunt": "^1.2.0"
   }
